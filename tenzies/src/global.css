@@ -1,0 +1,138 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F1DED0;
+    font-family: Karla;
+}
+
+
+
+.frame {
+    width: 480;
+    height: 496px;
+    background-color: #0B2434;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.display {
+    width: 350px ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.display h1 {
+ 
+    font-family: 'Karla';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.03em;
+
+    margin: 20px;
+
+    color: #2B283A;
+    
+}
+
+.display h3 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 25px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.03em;
+
+    margin-bottom: 20px;
+
+    color: #4A4E74;
+}
+
+
+
+
+.screen {
+    width: 427px;
+    height: 427px;
+    background-color: #F5F5F5 ;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.row {
+    display: flex;
+}
+
+.die {
+    width: 54px;
+    height: 54px;
+    border-radius: 5.7px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+    border-radius: 3.81277px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Karla;
+    font-size: 21px;
+    color: #2B283A;
+}
+
+.roll-btn {
+    
+    height: 35px;
+    width: 92px;
+    border-radius: 3.8127658367156982px;
+
+    margin: 20px;
+    
+    background: #5035FF;
+    box-shadow: 0px 3.2px 7.68px rgba(0, 0, 0, 0.18);
+    border-radius: 3.81277px;
+    border: none;
+
+
+    font-family: 'Karla';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16.384px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    color: #FFFFFF;
+
+    cursor: pointer;
+}
+
+.roll-btn:active {
+    background-color: #3017d1;
+    color: #bebebe;
+}
+
