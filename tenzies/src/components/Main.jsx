@@ -8,14 +8,6 @@ export default function Main(props) {
     function freezeDie(event) {
 
 
-        // // console.log('Clicked die')
-        // console.log(event)
-        // console.log(event.target)
-        // console.log(event.target.id)
-        // console.log(event.target.key)
-
-        // // console.log(event.target.name)
-        // console.log(event.target.value)
 
 
         props.setAllDice((prevAllDice) =>
@@ -44,7 +36,8 @@ export default function Main(props) {
 
     const diceElements = props.dice.map((die, index) => 
     <div 
-        className="die" 
+        className={`die ${die.freeze ? "freeze" : ""}`}
+        
         id={"id" + index.toString()} 
         value={props.dice[index].number} 
         key={props.dice[index].id} 

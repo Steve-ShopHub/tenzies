@@ -110,6 +110,8 @@ body {
     font-family: Karla;
     font-size: 21px;
     color: #2B283A;
+
+    cursor: pointer;
     
 }
 
@@ -145,5 +147,11 @@ body {
 .roll-btn:active {
     background-color: #3017d1;
     color: #bebebe;
+}
+
+.freeze {
+    background-color: #5035FF;
+    color: #FFFFFF;
+    cursor: pointer;
 }
 
