@@ -3,48 +3,27 @@ import '/src/global.css'
 
 export default function Main(props) {
     
-
-    
     function freezeDie(event) {
-
-
-
-
         props.setAllDice((prevAllDice) =>
             prevAllDice.map((prevDie) => {
-            if (prevDie.id === event.target.id) {
-                console.log(prevDie.id + ' ' + event.target.id )
-                
-                return {
-                    id: prevDie.id,
-                    number: prevDie.number,
-                    freeze: (!prevDie.freeze),
-                };
-            } else {
-                // console.log(prevDie.id + ' ' + event.target.id )
-            return {
-                ...prevDie
-            }
-        }
-
-        }
+            return prevDie.id === event.target.id ? {...prevDie, freeze: (!prevDie.freeze)} : {...prevDie}}
             ))
-
-
     }
 
-
-    const diceElements = props.dice.map((die, index) => 
-    <div 
-        className={`die ${die.freeze ? "freeze" : ""}`}
+    const diceElements = props.dice.map(function(die, index) { 
+        const targetDie = props.dice[index]
         
-        id={"id" + index.toString()} 
-        value={props.dice[index].number} 
-        key={props.dice[index].id} 
-        onClick={(event) => freezeDie(event)}>{props.dice[index].number}
+        return (
+        <div 
+            className={`die ${die.freeze ? "freeze" : ""}`}        
+            id={"id" + index.toString()} 
+            value={targetDie.number} 
+            key={targetDie.id} 
+            onClick={(event) => freezeDie(event)}>{targetDie.number}
 
-    </div>)
-
+        </div>
+        )
+    })
 
 
     return (
