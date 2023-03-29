@@ -12,9 +12,7 @@ export default function WinConfetti(props){
 
   )
   
-  // const handleWin = () => {
-  //   setShowConfetti(props.win)
-  // }
+
 
   return (
     <div>

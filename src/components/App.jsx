@@ -35,6 +35,8 @@ function initialize() {
 
 function gameWin() {
   setWin(true);
+  const partyHorn = new Audio("src/assets/party-horn.mp3");
+  partyHorn.play();
 }
 
 function checkWin() {
