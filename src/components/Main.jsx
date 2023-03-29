@@ -1,5 +1,10 @@
 import React from "react";
 import '/src/global.css'
+import WinConfetti from './WinConfetti'
+
+
+
+
 
 export default function Main(props) {
     
@@ -29,16 +34,18 @@ export default function Main(props) {
     return (
 
         <div className="frame">
+          <WinConfetti win={props.win}/>
           <div className="screen">
             
             <div className="display">
-                <h1 className="title">Tenzies</h1>
-                <h3 className="title">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</h3>
+                <h1 className="title">{!props.win ? "Tenzies" : "You win!"}</h1>
+                <h3 className="title">{!props.win ? "Roll until all dice are the same. Click each die to freeze it at its current value between rolls." : ""}</h3>
             </div>
 
             <div className="dice-container">{diceElements}</div>
             
-            <button className="roll-btn" onClick={props.newDice}>Roll</button>
+            {!props.win && <button className="roll-btn" onClick={props.newDice}>Roll</button>}
+            {props.win && <button className="win-btn" onClick={props.restart}>Restart</button>}
           </div>
         </div>
       );

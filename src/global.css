@@ -1,7 +1,16 @@
 * {
     box-sizing: border-box;
     margin: 0;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
 }
+
+
 
 body {
     margin: 0;
@@ -146,6 +155,40 @@ body {
 
 .roll-btn:active {
     background-color: #3017d1;
+    color: #bebebe;
+}
+
+.win-btn {
+    
+    height: 35px;
+    width: 92px;
+    border-radius: 3.8127658367156982px;
+
+    margin: 20px;
+    
+    background: #34ee81;
+    box-shadow: 0px 3.2px 7.68px rgba(0, 0, 0, 0.18);
+    border-radius: 3.81277px;
+    border: none;
+
+
+    font-family: 'Karla';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16.384px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    color: #444444;
+
+    cursor: pointer;
+}
+
+.win-btn:active {
+    background-color: #1e9b52;
     color: #bebebe;
 }
 

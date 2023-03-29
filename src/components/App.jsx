@@ -3,11 +3,13 @@
 import { useEffect, useState } from 'react'
 import '/src/global.css'
 import Main from './Main'
-// import nextId from "react-id-generator";
+
 
 function App() {
 
   const [allDice, setAllDice] = useState([])
+
+  const [win, setWin] = useState(false);
 
 function generateRandomNumber() {
   const randomNumber = Math.floor(Math.random() * 6) + 1;
@@ -15,7 +17,7 @@ function generateRandomNumber() {
 }
 
 function initialize() {
-  if (allDice.length === 0) {
+
     let dieArr = [];
     for (let i = 0; i < 10; i++) {
       const randomNumber = generateRandomNumber();
@@ -28,11 +30,11 @@ function initialize() {
     setAllDice(dieArr);
     console.log(dieArr);
     
-  }
+  
 }
 
 function gameWin() {
-  alert('You win!')
+  setWin(true);
 }
 
 function checkWin() {
@@ -48,6 +50,14 @@ function checkWin() {
   gameWin();
 }
 
+
+function gameRestart() {
+  setAllDice([]);
+  initialize();
+  setWin(false);
+
+
+}
 
 function allNewDice() {
 
@@ -80,6 +90,8 @@ function allNewDice() {
       dice={allDice}
       newDice={allNewDice}
       setAllDice={setAllDice}
+      win={win}
+      restart={gameRestart}
       
       />
     </div>
