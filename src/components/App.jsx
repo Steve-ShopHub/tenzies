@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import '/src/global.css'
 import Main from './Main'
-import nextId from "react-id-generator";
+// import nextId from "react-id-generator";
 
 function App() {
 
@@ -31,13 +31,35 @@ function initialize() {
   }
 }
 
+function gameWin() {
+  alert('You win!')
+}
+
+function checkWin() {
+  if (allDice.length === 0) { 
+    return
+  }
+  const firstDieValue = allDice[0].number;
+  for (let i = 1; i < allDice.length; i++) {
+    if (allDice[i].number !== firstDieValue) {
+      return;
+    }
+  }
+  gameWin();
+}
+
+
 function allNewDice() {
+
+  
+
   if (allDice.length === 0) {
     initialize();
     
   }
   
   else {
+    
     setAllDice((prevAllDice) =>
       prevAllDice.map((prevDie) => {
         const randomNumber = generateRandomNumber();        
@@ -48,6 +70,8 @@ function allNewDice() {
   }
 }
   useEffect(() => {allNewDice()}, [])
+
+  useEffect(() => {checkWin()}, [allDice])
 
 
   return (
