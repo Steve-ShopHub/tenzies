@@ -178,20 +178,7 @@ export default function Main(props) {
     )
     })
 
-  //   const diceElements = props.dice.map(function(die, index) { 
-  //     const targetDie = props.dice[index]
-      
-  //     return (
-  //     <div 
-  //         className={`die ${die.freeze ? "freeze" : ""}`}        
-  //         id={"id" + index.toString()} 
-  //         value={targetDie.number} 
-  //         key={targetDie.id} 
-  //         onClick={(event) => freezeDie(event)}>{targetDie.number}
 
-  //     </div>
-  //     )
-  // })
 
 
     return (

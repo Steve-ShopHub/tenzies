@@ -79,6 +79,10 @@ function allNewDice() {
 
       })
     );
+
+
+
+
   }
 }
   useEffect(() => {allNewDice()}, [])

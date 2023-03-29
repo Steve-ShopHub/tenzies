@@ -207,11 +207,13 @@ body {
     height: 70px;
     margin-left: 5px;
     margin-right: 5px;
-    border-radius: 5.7px;
+    /* border-radius: 5.7px; */
+    /* background-color: #141414ad; */
     position: relative;
     transform-style: preserve-3d;
     transform: translateZ(-35px);
     transition: transform 0.5s;
+    cursor: pointer;
   }
   
   .cube.show-one  { transform: translateZ(-35px) rotateY(   0deg); }
@@ -225,15 +227,20 @@ body {
     position: absolute;
     width: 70px;
     height: 70px;
-    border: 2px solid rgb(61, 61, 61);
+    border: 2px solid #141414ad;
     padding: 5px;
-    border-radius: 5.7px;
+    /* border-radius: 2px; */
     /* background-color: #ffd59e; */
     line-height: 50px;
     font-size: 21px;
     font-weight: bold;
     color: rgb(0, 0, 0);
     text-align: center;
+    cursor: pointer;
+  }
+
+  .cube__face {
+    border-radius: 10px;
   }
   
   /* .cube__face--one  { background: hsla(0, 0%, 100%, 0.7); }
@@ -312,27 +319,7 @@ body {
     justify-content: center;
   }
   
-  /* OTHER STYLES */
   
-  /* * {
-    box-sizing: border-box;
-  }
-   */
-  /* html, body {
-    height: 100%;
-  } */
-  
-  /* body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    vertical-align: center;
-    flex-wrap: wrap;
-    align-content: center;
-    font-family: 'Open Sans', sans-serif;
-    
-    background: linear-gradient(top, #222, #333);
-  } */
   
   [class$="face"] {
     /* margin: 16px; */
@@ -365,11 +352,14 @@ body {
 
 
   .freeze {
-    background-color: #27ad2e;
+    background-color: #5035FF;
     cursor: pointer;
+    border-radius: 10px;
+    
+
 }
 
 
-.freeze > .pip {
-    background-color: rgb(197, 197, 197);
+.freeze .pip {
+    background-color: #FFFFFF
 }
