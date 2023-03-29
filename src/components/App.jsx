@@ -1,4 +1,5 @@
 
+
 import { useEffect, useState } from 'react'
 import '/src/global.css'
 import Main from './Main'
@@ -8,14 +9,16 @@ function App() {
 
   const [allDice, setAllDice] = useState([])
 
+function generateRandomNumber() {
+  const randomNumber = Math.floor(Math.random() * 6) + 1;
+  return randomNumber;
+}
 
-
-
-function allNewDice() {
+function initialize() {
   if (allDice.length === 0) {
     let dieArr = [];
     for (let i = 0; i < 10; i++) {
-      const randomNumber = Math.floor(Math.random() * 6) + 1;
+      const randomNumber = generateRandomNumber();
       dieArr.push({
         id: `id${dieArr.length}`,
         number: randomNumber,
@@ -24,35 +27,27 @@ function allNewDice() {
     }
     setAllDice(dieArr);
     console.log(dieArr);
-  } else {
+    
+  }
+}
+
+function allNewDice() {
+  if (allDice.length === 0) {
+    initialize();
+    
+  }
+  
+  else {
     setAllDice((prevAllDice) =>
       prevAllDice.map((prevDie) => {
-        if (prevDie.freeze === true) {
-          return {
-            id: prevDie.id,
-            number: prevDie.number,
-            freeze: true,
-          };
-        } else {
-          const randomNumber = Math.floor(Math.random() * 6) + 1;
-          return {
-            id: prevDie.id,
-            number: randomNumber,
-            freeze: false,
-          };
-        }
+        const randomNumber = generateRandomNumber();        
+        return prevDie.freeze === true ? {...prevDie} : {...prevDie, number: randomNumber};
+
       })
     );
   }
 }
-
-
-
-  useEffect(() => {
-  
-    allNewDice();
-  
-      } , [])
+  useEffect(() => {allNewDice()}, [])
 
 
   return (
